@@ -54,6 +54,11 @@ module.exports = {
     },
   },
 
+  node: {
+    fs: "empty",
+    child_process: 'empty',
+  },
+
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
