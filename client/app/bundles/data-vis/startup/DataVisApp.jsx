@@ -1,8 +1,8 @@
   import HomeContainer from '../containers/HomeContainer';
-  import InputChoiceComponent from '../components/InputChoiceComponent';
+  import InputChoiceContainer from '../containers/InputChoiceContainer';
   import ReactOnRails from 'react-on-rails';
 
   ReactOnRails.register({ 
     HomeContainer,
-    InputChoiceComponent
+    InputChoiceContainer
   });

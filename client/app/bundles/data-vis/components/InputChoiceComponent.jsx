@@ -1,12 +1,27 @@
 import React from 'react';
 import ReactOnRails from 'react-on-rails';
+import HomeContainer from '../containers/HomeContainer';
+import ButtonChoice from './ButtonChoice';
 
 function InputChoiceComponent(props){
+    
+    const choice = props.choice;
+    let inputForm;
+
+    switch (choice) {
+        case 2:
+            inputForm = <HomeContainer/>
+            break;
+        default:
+            inputForm = <ButtonChoice
+                            choice={choice}
+                            onClick={props.onClick}/>
+            break;
+    }
+
     return(
         <div>
-            <button type="button" className="btn btn-primary btn-lg btn-block" id="1">Copy/paste Json</button>
-            <button type="button" className="btn btn-primary btn-lg btn-block" id="2">Copy/paste CSV</button>
-            <button type="button" className="btn btn-primary btn-lg btn-block" id="3">Upload CSV</button>
+            {inputForm}
         </div>
     )
 }

@@ -9,24 +9,14 @@ const HomeContainer = React.createClass({
             yourName: "Jerf",
         }
     },
-    handleUserSubmit(event){
-        event.preventDefault();
-        var input = $(event.target).find("textarea").val();
-        console.log(input);
-    },
-    render() {
-        <InputChoiceComponent />
-    }
-    // render(){
-    //     console.log(this.state);
-    //     return(
-    //         <HomeComponent
-    //             data= {this.state}
-    //             name = {this.state.yourName}
-    //             onUserSubmit = {this.handleUserSubmit}/>
-    //     )
+    render(){
+        return(
+            <HomeComponent
+                data= {this.state}
+                name = {this.state.yourName}/>
+        )
 
-    // }
+    }
 });
 
 module.exports = HomeContainer;
