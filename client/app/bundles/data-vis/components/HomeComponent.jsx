@@ -13,7 +13,7 @@ function HomeComponent(props){
         <div>
             <h1>DataVis!</h1>
             <form
-                onSubmit = {props.onUserSubmit}>
+                onSubmit = {props.onSubmit}>
                 <div className="form-group">
                     <textarea
                         placeholder="stick your json here."
