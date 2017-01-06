@@ -1,7 +1,6 @@
 import React from 'react';
 
 function JsonRowComponent(props){
-    debugger;
     return (
         <div>
             {props.jsonData.map(function(row){

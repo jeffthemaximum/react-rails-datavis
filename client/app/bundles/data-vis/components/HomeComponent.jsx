@@ -10,7 +10,7 @@ import BaseComponent from 'libs/components/BaseComponent';
 import JsonRowComponent from './JsonRowComponent';
 
 function HomeComponent(props){
-    const {jsonData} = props.data;
+    const {defaultCsv, jsonData} = props.data;
     return(
         <div>
             <h1>DataVis!</h1>
@@ -20,7 +20,9 @@ function HomeComponent(props){
                     <textarea
                         placeholder="stick your json here."
                         className="form-control"
-                        rows="3"/>
+                        rows="10"
+                        defaultValue={defaultCsv}>
+                    </textarea>
                     <button
                         type="submit"
                         className="btn btn-primary">
@@ -34,8 +36,10 @@ function HomeComponent(props){
                     <JsonRowComponent
                         jsonData={jsonData}/>
                     :
-                    <h4>Paste some csv text above to test it out!</h4>
-
+                    <div>
+                        <h4>Directions</h4>
+                        <p>Paste your CSV data here, or test it out with our sample data!</p>
+                    </div>
                 }
             </div>
         </div>
