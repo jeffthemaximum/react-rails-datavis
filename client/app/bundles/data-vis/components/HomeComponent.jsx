@@ -7,8 +7,10 @@ import Form from 'react-bootstrap/lib/Form';
 import FormGroup from 'react-bootstrap/lib/FormGroup';
 
 import BaseComponent from 'libs/components/BaseComponent';
+import JsonRowComponent from './JsonRowComponent';
 
 function HomeComponent(props){
+    const {jsonData} = props.data;
     return(
         <div>
             <h1>DataVis!</h1>
@@ -26,7 +28,16 @@ function HomeComponent(props){
                     </button>
                 </div>
             </form>
-            <h2>The name from our props is {props.name}</h2>
+            <div>
+                {
+                    jsonData ?
+                    <JsonRowComponent
+                        jsonData={jsonData}/>
+                    :
+                    <h4>Paste some csv text above to test it out!</h4>
+
+                }
+            </div>
         </div>
     )
 }

@@ -6,22 +6,27 @@ const HomeContainer = React.createClass({
     getInitialState(){
         return {
             formatting: true,
-            jsonData: "",
+            jsonData: null,
             yourName: "Jerf",
         }
     },
     handleSubmit(event){
         event.preventDefault();
         var input = $(event.target).find("textarea").val();
-        var resp = csvStringToJson(input);
-        console.log(resp)
+
+        csvStringToJson(input, function(resp){
+            this.setState({
+                jsonData: resp
+            });
+        }.bind(this)); 
     },
     render(){
         return(
             <HomeComponent
                 data= {this.state}
                 name = {this.state.yourName}
-                onSubmit={this.handleSubmit}/>
+                onSubmit={this.handleSubmit}
+                jsonData={this.state.jsonData}/>
         )
 
     }
