@@ -16,9 +16,19 @@ function csvStringToJson(csvString, callback){
         });
         
     // }); 
-} 
+}
+
+function rowsToColumns(grid){
+    var grid2 = grid[0].map(function(col, i) {
+        return grid.map(function(row) {
+            return row[i];
+        });
+    });
+    return grid2;
+}
 
 
 module.exports = {
-    csvStringToJson: csvStringToJson
+    csvStringToJson: csvStringToJson,
+    rowsToColumns: rowsToColumns
 }

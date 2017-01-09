@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeComponent from '../components/HomeComponent';
-import {csvStringToJson} from '../helpers/csvHelpers';
+import {csvStringToJson, rowsToColumns} from '../helpers/csvHelpers';
+import {dancingBarChart} from '../d3-graphs/dancingBarChart';
 
 const defaultCsv = `Name,Population (mill),Average Life Expectancy,Area (1000 sq mi),Continent
 Canada,33.9,80.7,3854.085,America
@@ -41,6 +42,10 @@ const HomeContainer = React.createClass({
             this.setState({
                 jsonData: resp
             });
+            let columns = rowsToColumns(resp);
+            columns[0].shift()
+            columns[1].shift()
+            dancingBarChart(columns[0], columns[1]);
         }.bind(this)); 
     },
     render(){

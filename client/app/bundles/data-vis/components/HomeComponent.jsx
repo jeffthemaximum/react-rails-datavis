@@ -30,6 +30,9 @@ function HomeComponent(props){
                     </button>
                 </div>
             </form>
+            <div className="bar-chart">
+
+            </div>
             <div>
                 {
                     jsonData ?
